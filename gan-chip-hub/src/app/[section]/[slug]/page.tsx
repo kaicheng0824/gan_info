@@ -2,6 +2,8 @@
 import { getArticle } from "@/lib/getArticles";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ReactMarkdown from 'react-markdown';
+import 'github-markdown-css';
 
 interface PageProps {
   params: {
@@ -21,10 +23,7 @@ export default async function ArticlePage({ params }: PageProps) {
   return (
     <main className="max-w-3xl mx-auto p-6">
       <div className="mb-8">
-        <Link 
-          href={`/`} 
-          className="text-blue-600 hover:underline"
-        >
+        <Link href={`/`} className="text-blue-600 hover:underline">
           &larr; Back to Home
         </Link>
       </div>
@@ -41,10 +40,9 @@ export default async function ArticlePage({ params }: PageProps) {
         <p className="text-gray-700 mb-6">By: {article.metadata.author}</p>
       )}
       
-      <article 
-        className="prose max-w-none"
-        dangerouslySetInnerHTML={{ __html: article.content }} 
-      />
+      <article className="markdown-body">
+        <ReactMarkdown>{article.content}</ReactMarkdown>
+      </article>
     </main>
   );
 }
