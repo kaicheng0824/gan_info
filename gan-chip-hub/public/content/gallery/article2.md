@@ -1,6 +1,6 @@
 ---
 title: "GaN Power Chip"
-image: "/images/gallery/ISSCC24_Wicht.png"
+image: "/images/gallery/JSSC22_B_Ma.png"
 description: "High efficiency GaN power transistor"
 date: "2025-05-17"
 ---
