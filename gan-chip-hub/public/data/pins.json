@@ -1,0 +1,19 @@
+[
+    {
+      "id": "mit-research",
+      "type": "research",
+      "name": "MIT GaN Lab",
+      "description": "Leading research in high-performance GaN devices.",
+      "lat": 42.3601,
+      "lng": -71.0942
+    },
+    {
+      "id": "infineon",
+      "type": "company",
+      "name": "Infineon Technologies",
+      "description": "Global semiconductor company with GaN products.",
+      "lat": 48.2622,
+      "lng": 11.6678
+    }
+  ]
+  

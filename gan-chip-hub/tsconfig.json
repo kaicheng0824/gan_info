@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "baseUrl": ".",
+    // "types": ["leaflet"],
     "paths": {
       "@/*": ["./*"],      // Maps "@/" to the root directory
       "@/lib/*": ["lib/*"],  // Maps "@/lib/" to "lib/"
