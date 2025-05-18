@@ -12,7 +12,7 @@ The International Solid-State Circuits Conference (ISSCC) 2025 featured cutting-
 ### By Institution  
 #### North America  
 - **University of California, San Diego**  
-  - **H. M. Pham** (Asbeck Lab)  
+  - **H. M. Pham** (iPowers3es Lab UCSD - Dr. Hanh-Phuc Le)  
     - *Research Focus:* GaN-based power modulators for 5G  
     - *Presentation Title:* "A 74W/48V Monolithic-GaN Integrated Adjustable Multilevel Supply Modulator for 5G Base-Station Massive-MIMO Arrays"  
     - *Role:* Speaker  
