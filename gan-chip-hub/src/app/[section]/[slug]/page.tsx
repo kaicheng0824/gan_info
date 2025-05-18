@@ -4,6 +4,10 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import ReactMarkdown from 'react-markdown';
 import 'github-markdown-css';
+import remarkGfm from 'remark-gfm';
+
+// ... in your component:
+
 
 interface PageProps {
   params: {
@@ -41,7 +45,7 @@ export default async function ArticlePage({ params }: PageProps) {
       )}
       
       <article className="markdown-body">
-        <ReactMarkdown>{article.content}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{article.content}</ReactMarkdown>
       </article>
     </main>
   );

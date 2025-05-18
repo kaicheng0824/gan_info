@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Article {
   slug: string;
@@ -30,14 +31,17 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ articles, onImageSelec
                         extractFirstImageFromContent(article.content);
         
         return (
-          <div 
-            key={article.slug} 
-            className="group relative cursor-pointer flex flex-col"
-            onClick={() => imageUrl && onImageSelect(imageUrl)}
-          >
+          <div key={article.slug} className="group flex flex-col">
+            {/* Image with click handler for modal */}
             <div className="aspect-square overflow-hidden rounded-lg bg-gray-100 flex items-center justify-center">
               {imageUrl ? (
-                <div className="w-full h-full flex items-center justify-center p-2">
+                <div 
+                  className="w-full h-full flex items-center justify-center p-2 cursor-pointer"
+                  onClick={(e) => {
+                    e.stopPropagation(); // Prevent event bubbling to parent
+                    onImageSelect(imageUrl);
+                  }}
+                >
                   <Image
                     src={imageUrl}
                     alt={article.metadata?.title || "GaN Chip Image"}
@@ -56,7 +60,12 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ articles, onImageSelec
                 </div>
               )}
             </div>
-            <div className="mt-2">
+            
+            {/* Article content with link to article */}
+            <Link 
+              href={`/gallery/${article.slug}`} 
+              className="mt-2 block hover:underline"
+            >
               <h3 className="font-medium text-gray-900">
                 {article.metadata?.title || article.slug}
               </h3>
@@ -65,7 +74,7 @@ export const GalleryGrid: React.FC<GalleryGridProps> = ({ articles, onImageSelec
                   {article.metadata.description}
                 </p>
               )}
-            </div>
+            </Link>
           </div>
         );
       })}
